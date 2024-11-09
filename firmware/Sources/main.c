@@ -55,13 +55,22 @@ int main(void)
     __HAL_RCC_GPIOA_CLK_ENABLE();
     __HAL_RCC_GPIOB_CLK_ENABLE();
 
-    GPIO_InitTypeDef GPIO_InitStructure;
+    GPIO_InitTypeDef GPIO_InitStructure = {0};
     GPIO_InitStructure.Pin =  GPIO_PIN_10;
     GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
     GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_LOW;
     GPIO_InitStructure.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStructure);
     
+    /*
+    GPIO_InitTypeDef GPIO_InitStructure_GreenLED = {0};
+    GPIO_InitStructure_GreenLED.Pin =  GPIO_PIN_13;
+    GPIO_InitStructure_GreenLED.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStructure_GreenLED.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStructure_GreenLED.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStructure_GreenLED);
+    GPIOB->ODR |= GPIO_PIN_13;*/
+
     SettingsInit();
     USBInit();
     MS5351Init();
