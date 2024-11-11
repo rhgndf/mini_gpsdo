@@ -8,6 +8,7 @@ Features
 - All 3 outputs broken out
 - STM32G431 microprocessor
 - JLCPCB-assembled
+- <25USD each
 - Designed to fit a 45cm by 45cm by 18.5cm aluminium enclosure.
 - Front and back PCB panels coming soon.
 
